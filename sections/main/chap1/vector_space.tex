@@ -32,15 +32,23 @@
 		\end{itemize} 
 	\end{enumerate} 
 
-	\noindent For brevity, we will denote vectors as bold face letters instead of overhead arrows after this definition. For example, $\vu, \vv$ and $\vw$
+	\noindent For brevity, we will denote vectors as bold face letters instead of overhead arrows after this definition. For example, $\vu, \vv$ and $\vw$.
 \end{definition} 
+
+\begin{remark}[``Over a field'']
+	When we use the phrase ``a vector space over a field $\field$'', this means that the scalars that we use will be taken from the field $\field$. It does not mean that our vector space consists of $\field$-valued vectors. For example, the following vector space:
+	\begin{align*}
+		\mathrm{L} = \bigCurl{(x, \alpha x) : x\in\mathbb{C}, \alpha\in\R}	
+	\end{align*}
+	is a vector space over $\R$ (scalar multiplications are done with real-valued scalars) even though the vectors are complex-valued.
+\end{remark} 
 
 \begin{remark}[Trivial Space]
 	A vector space with one element is called a \textbf{trivial space}.	
 \end{remark} 
 
-\begin{example}
-	The following is a vector space over $\R^2$:
+\begin{example}[A simple example]
+	The following is a vector space over $\R$:
 	\begin{align*}
 		\mathrm{L} = \bigCurl{
 			\begin{pmatrix}
@@ -49,5 +57,51 @@
 		}.
 	\end{align*}
 
-	\noindent This is easy to verify. Let us go through each condition one by one. Suppose that we have two vectors $\vu_1, \vu_2 \in \mathrm{L}$ defined as follows: 
+	\noindent This is easy to verify. Let us go through each condition one by one. Let the vectors $\vu_1, \vu_2, \vu_3 \in \mathrm{L}$ defined as follows: 
+	\begin{align*}
+		\vu_1 = \begin{pmatrix}
+			x_1 \\ 3x_1	
+		\end{pmatrix}, \quad
+		\vu_2 = \begin{pmatrix}
+			x_2 \\ 3x_2	
+		\end{pmatrix}, \quad 
+		\vu_3 = \begin{pmatrix}
+			x_3 \\ 3x_3	
+		\end{pmatrix}..
+	\end{align*} 
+
+	\noindent All the axioms of a vector space are satisfied. Let $\alpha,\beta\in\R$, we have:
+	\begin{enumerate}
+		\item \emph{Closure under vector addition}: $\vu_1 + \vu_2 = \begin{pmatrix} x_1 \\ 3x_1 \end{pmatrix} + \begin{pmatrix} x_2 \\ 3x_2 \end{pmatrix} = \begin{pmatrix} x_1 + x_2 \\ 3(x_1 + x_2) \end{pmatrix} \in \mathrm{L}$.
+
+		\item \emph{Closure under scalar multiplication}: $\alpha\vu_1 = \alpha \begin{pmatrix} x_1 \\ 3x_1 \end{pmatrix} = \begin{pmatrix} \alpha x_1 \\ 3\alpha x_1 \end{pmatrix} \in \mathrm{L}$. 
+
+		\item \emph{Additive commutativity}: $\vu_1 + \vu_2 = \begin{pmatrix} x_1 + x_2 \\ 3x_1 + 3x_2 \end{pmatrix} = \begin{pmatrix} x_2 + x_1 \\ 3x_2 + 3x_1 \end{pmatrix} = \vu_2 + \vu_1$.
+
+		\item \emph{Additive associativity}: $(\vu_1 + \vu_2) + \vu_3 = \begin{pmatrix} (x_1 + x_2) + x_3 \\ 3(x_1 + x_2) + 3x_3\end{pmatrix}=\begin{pmatrix} x_1 + (x_2 + x_3) \\ 3x_1 + 3(x_2 + x_3)\end{pmatrix} = \vu_1 + (\vu_2 + \vu_3)$.
+
+		\item $\dots$ (We can easily verify other axioms as well).
+	\end{enumerate} 
+\end{example} 
+
+\begin{example}[Polynomials of degree 3]
+	Consider the following set of real-coefficients polynomials with degree of at most 3:
+	\begin{align*}
+		\mathcal{P}_3 &= \bigCurl{
+			a_0 + a_1x + a_2x^2 + a_3x^3 \Big| a_0, a_1, a_2, a_3\in\R
+		}.
+	\end{align*} 
+
+	\noindent Then, $\mathcal{P}_3$ is a vector space over $\R$ under the following operations:
+	\begin{align*}
+		(a_0 + a_1x + a_2x^2 + a_3x^3) &+ (b_0 + b_1x + b_2x^2 + b_3x^3) \\
+			&= (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + (a_3 + b_3)x^3, \\
+		\alpha\cdot(a_0 + a_1x + a_2x^2 + a_3x^3) &= (\alpha a_0) + (\alpha a_1) x + (\alpha a_2) x^2 + (\alpha a_3) x^3.
+	\end{align*} 
+
+	\noindent We can think of $\mathcal{P}_3$ as being ``the same'' as the vector space $\R^4$. For every set of real coefficients $a_0, \dots, a_3$, we have the following correspondence:
+	\begin{align*}
+		a_0 + a_1x + a_2x^2 + a_3x^3 \text{ corresponds to } \begin{pmatrix}
+			a_0 \\ a_1 \\ a_2 \\ a_3	
+		\end{pmatrix} 
 \end{example} 

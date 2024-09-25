@@ -28,6 +28,11 @@
     urlcolor={blue!80!black}
 }
 
+%% Other environments %%
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+
+
 %% Theorem style %%
 \newtheoremstyle{definition}
                 {5pt} % top space
@@ -117,4 +122,20 @@
 
 %% Custom commands %%
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
 \newcommand{\field}{\mathbb{F}}
+
+%% Indicator function %%
+\DeclareMathAlphabet{\mathmybb}{U}{cmr}{m}{n}
+\newcommand{\1}[1]{\mathmybb{\bf 1}{\{#1\}}}
+
+%% Brackets %%
+\newcommand{\bigSquare}[1]{\Big[ #1 \Big]}
+\newcommand{\biggSquare}[1]{\Bigg[ #1 \Bigg]}
+\newcommand{\bigRound}[1]{\Big( #1 \Big)}
+\newcommand{\biggRound}[1]{\Bigg( #1 \Bigg)}
+\newcommand{\bigCurl}[1]{\Big\{ #1 \Big\}}
+\newcommand{\biggCurl}[1]{\Bigg\{ #1 \Bigg\}}
+\newcommand{\bigAbs}[1]{\Big| #1 \Big|}
+\newcommand{\biggAbs}[1]{\Bigg| #1 \Bigg|}
+

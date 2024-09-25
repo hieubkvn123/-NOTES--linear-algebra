@@ -1,0 +1,34 @@
+\subsection{Definition of Vector Space}
+\begin{definition}[Vector Space]
+	A \textbf{vector space} (over a field $\field$) consists of a set $V$ with two operations $``+"$ and $``\cdot"$ subject to the conditions that for all $\vec{v}, \vec{w}, \vec{u}\in V$ and scalars $r, s\in\field$:
+	\begin{enumerate}
+		\item \textbf{Closure under}:
+		\begin{itemize}
+			\item Vector addition: $\vec{v} + \vec{w} \in V$.
+			\item Scalar multiplication: $r\cdot\vec{v} \in V$.
+		\end{itemize}
+
+		\item \textbf{Properties of vector addition}:
+		\begin{itemize}
+			\item Commutativity: $\vec{v} + \vec{w} = \vec{w} + \vec{v}$.
+			\item Associativity: $(\vec{v} + \vec{w}) + \vec{u} = \vec{v} + (\vec{w} + \vec{u})$.
+		\end{itemize} 
+
+		\item \textbf{Properties of scalar multiplication}:
+		\begin{itemize}
+			\item Distributivity over scalar addition: $(r+s)\cdot\vec{v} = r\cdot\vec{v} + s\cdot\vec{v}$.	
+			\item Distributivity over vector addition: $r\cdot(\vec{v} + \vec{w}) = r\cdot\vec{v} + r\cdot\vec{w}$.
+		\end{itemize} 
+
+		\item \textbf{Inverse elements}:
+		\begin{itemize}
+			\item Additive inverse: $\forall \vec{v}\in V, \exists -\vec{v}\in V: \vec{v} + (-\vec{v}) = \vec{0}$.	
+		\end{itemize} 
+
+		\item \textbf{Identity elements}:
+		\begin{itemize}
+			\item Additive identity: $\exists\vec{0} \in V: \vec{0} + \vec{v} = \vec{v}, \quad \forall \vec{v}\in V$.
+			\item Multiplicative identity: $\exists \bm{1}\in\field: \bm{1}\cdot\vec{v} = \vec{v},\quad \forall \vec{v} \in V$.	
+		\end{itemize} 
+	\end{enumerate} 
+\end{definition} 

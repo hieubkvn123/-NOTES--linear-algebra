@@ -171,5 +171,12 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{proof*} 
 
 \begin{definition}[Span (Linear Closure)]
-	
+	The span of a non empty subset $S$ of a vector space over a field $\field$ is the set of all linear combinations of vectors from $S$.
+	\begin{equation}
+		\mathrm{span}(S) = \biggCurl{
+			\sum_{i=1}^n \lambda_i \vv_i : \vv_i \in S, \lambda_i \in \field
+		}.
+	\end{equation} 
+
+	\noindent The span of an empty subset of a vector space is its trivial space ($\mathrm{span}(\emptyset) = \{0\}$).
 \end{definition} 

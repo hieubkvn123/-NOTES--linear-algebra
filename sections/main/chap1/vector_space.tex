@@ -180,3 +180,21 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 
 	\noindent The span of an empty subset of a vector space is its trivial space ($\mathrm{span}(\emptyset) = \{0\}$).
 \end{definition} 
+
+\begin{proposition}{Span of Subsets in Vector Spaces}{span_of_subsets_in_vspaces}
+	In a vector space, the span of any subset is a subspace.
+\end{proposition} 
+
+\begin{proof*}[Proposition \ref{prop:span_of_subsets_in_vspaces}]
+	Let $V$ be a vector space over $\field$ and $S\subseteq V$. Denote that $\tilde S = \mathrm{span}(S)$. Obviously $\tilde S \subseteq V$ due to closure under linear combinations of vector spaces. We have to prove that $\tilde S$ is also closed under linear combinations. Let $\lambda_1, \dots, \lambda_n\in\field$ and $\vv_1, \dots, \vv_n\in \tilde S$. For each $\vv_i$, we have:
+	\begin{align*}
+		\vv_i = \sum_{j=1}^{n_i} \alpha_{i, j} \vu_{i,j} \text{ where } \alpha_{i,1}, \dots, \alpha_{i, n_i} \in \field, \vu_{i,1}, \dots, \vu_{i,n_i} \in S.
+	\end{align*} 
+
+	\nouindent Therefore, we have:
+	\begin{align*}
+		\sum_{i=1}^n \lambda_i \vv_i &= \sum_{i=1}^n \sum_{j=1}^{n_i} \alpha_{i, j}\vu_{i, j} \in \tilde S.
+	\end{align*} 
+
+	\noindent Therefore, $\tilde S$ is a subspace of $V$.
+\end{proof*}	 

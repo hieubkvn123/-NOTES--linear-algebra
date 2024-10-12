@@ -1,35 +1,37 @@
 \subsection{Definition of Vector Space}
 \begin{definition}[Vector Space]
+	\label{def:vector_space}
 	A \textbf{vector space} (over a field $\field$) consists of a set $V$ with two operations $``+"$ and $``\cdot"$ subject to the conditions that for all $\vec{v}, \vec{w}, \vec{u}\in V$ and scalars $r, s\in\field$:
 	\begin{enumerate}
 		\item \textbf{Closure under}:
-		\begin{itemize}
+		\begin{enumerate}[label=\roman*]
 			\item Vector addition: $\vec{v} + \vec{w} \in V$.
 			\item Scalar multiplication: $r\cdot\vec{v} \in V$.
-		\end{itemize}
+		\end{enumerate}
 
 		\item \textbf{Properties of vector addition}:
-		\begin{itemize}
+		\begin{enumerate}[label=\roman*]\addtocounter{enumii}{2}
 			\item Commutativity: $\vec{v} + \vec{w} = \vec{w} + \vec{v}$.
 			\item Associativity: $(\vec{v} + \vec{w}) + \vec{u} = \vec{v} + (\vec{w} + \vec{u})$.
-		\end{itemize} 
+		\end{enumerate} 
 
 		\item \textbf{Properties of scalar multiplication}:
-		\begin{itemize}
+		\begin{enumerate}[label=\roman*]\addtocounter{enumii}{4}
+			\item Associativity : $r\cdot(s\cdot\vec{v}) = (rs)\cdot \vec{v}$.
 			\item Distributivity over scalar addition: $(r+s)\cdot\vec{v} = r\cdot\vec{v} + s\cdot\vec{v}$.	
 			\item Distributivity over vector addition: $r\cdot(\vec{v} + \vec{w}) = r\cdot\vec{v} + r\cdot\vec{w}$.
-		\end{itemize} 
+		\end{enumerate} 
 
 		\item \textbf{Inverse elements}:
-		\begin{itemize}
+		\begin{enumerate}[label=\roman*]\addtocounter{enumii}{7}
 			\item Additive inverse: $\forall \vec{v}\in V, \exists -\vec{v}\in V: \vec{v} + (-\vec{v}) = \vec{0}$.	
-		\end{itemize} 
+		\end{enumerate} 
 
 		\item \textbf{Identity elements}:
-		\begin{itemize}
+		\begin{enumerate}[label=\roman*]\addtocounter{enumii}{8}
 			\item Additive identity: $\exists\vec{0} \in V: \vec{0} + \vec{v} = \vec{v}, \quad \forall \vec{v}\in V$.
 			\item Multiplicative identity: $\exists \bm{1}\in\field: \bm{1}\cdot\vec{v} = \vec{v},\quad \forall \vec{v} \in V$.	
-		\end{itemize} 
+		\end{enumerate} 
 	\end{enumerate} 
 
 	\noindent For brevity, we will denote vectors as bold face letters instead of overhead arrows after this definition. For example, $\vu, \vv$ and $\vw$.
@@ -48,6 +50,7 @@
 \end{remark} 
 
 \begin{example}[A simple example]
+	\label{example:simple_vector_space}
 	The following is a vector space over $\R$:
 	\begin{align*}
 		\mathrm{L} = \bigCurl{
@@ -107,4 +110,33 @@
 	\end{align*}
 
 	\noindent Similarly, for any $n\ge 1$, $\mathcal{P}_n$ is also a vector space over $\R$.
+
+	\begin{definition}[Vector Space as Abelian Group]
+		Let $V$ be a vector space over a field $\field$ with two operations $``+"$ and $``\cdot"$. Then, $(V, +)$ is an (additive) Abelian group that satisfies the additional axioms on scalar multiplications:
+		\begin{enumerate}[label=\roman*]
+			\item $\lambda\vu \in V$ for all $\lambda\in\field$ and $\vu\in V$. \hfill (Closure under scalar multiplication)
+			\item $(\lambda\mu)\vu = \lambda(\mu\vu)$ for all $\lambda, \mu\in\field$ and $\vv\in V$. \hfill (Associativity)
+			\item $\lambda(\vu + \vv) = \lambda\vu + \lambda\vv$, $\vu, \vv\in V$ and $\lambda\in\field$. \hfill (Distributivity in $V$)
+			\item $(\lambda + \mu)\vu = \lambda\vu + \mu\vu$, $\lambda, \mu\in\field$ and $\vu\in V$. \hfill (Distributivity in $\field$)
+			\item $1\vu = \vu$ for all $\vu\in V$. \hfill (Multiplicative identity)
+		\end{itemize} 
+
+		\noindent Basically, we can think of vector spaces as Abelian groups with additional structures involving scalar multiplications. According to definition \ref{def:vector_space}, the fact that $V$ is an Abelian group makes it satisfy properties $(i), (iii), (iv), (vii)$ and $(viii)$. The additonal properties regarding scalar multiplication are listed above.
+	\end{definition} 
 \end{example} 
+
+\subsection{Subspace and Spanning Sets}
+In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ that is a subset of $\R^2$, $\mathrm{L}=\{(x, 3x)^\top : x\in\R\}$, which is a line through the origin. In this section, we provide a formal definition for subspace of a vector space:
+\begin{definition}[Subspace]
+	For vector space $V$ with two operations $``+"$ and $``\cdot"$. $S$ is called a subspace of $V$ if:
+	\begin{itemize}
+		\item $S\subseteq V$.
+		\item $S$ is a vector space under the inherited operations.	
+	\end{itemize} 	
+\end{definition} 
+
+\begin{proposition}{Closure of Subspace under Linear Combination}{closure_of_subspace}
+	
+\end{proposition} 
+
+

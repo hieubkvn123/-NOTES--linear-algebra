@@ -110,20 +110,20 @@
 	\end{align*}
 
 	\noindent Similarly, for any $n\ge 1$, $\mathcal{P}_n$ is also a vector space over $\R$.
-
-	\begin{definition}[Vector Space as Abelian Group]
-		Let $V$ be a vector space over a field $\field$ with two operations $``+"$ and $``\cdot"$. Then, $(V, +)$ is an (additive) Abelian group that satisfies the additional axioms on scalar multiplications:
-		\begin{enumerate}[label=\roman*]
-			\item $\lambda\vu \in V$ for all $\lambda\in\field$ and $\vu\in V$. \hfill (Closure under scalar multiplication)
-			\item $(\lambda\mu)\vu = \lambda(\mu\vu)$ for all $\lambda, \mu\in\field$ and $\vv\in V$. \hfill (Associativity)
-			\item $\lambda(\vu + \vv) = \lambda\vu + \lambda\vv$, $\vu, \vv\in V$ and $\lambda\in\field$. \hfill (Distributivity in $V$)
-			\item $(\lambda + \mu)\vu = \lambda\vu + \mu\vu$, $\lambda, \mu\in\field$ and $\vu\in V$. \hfill (Distributivity in $\field$)
-			\item $1\vu = \vu$ for all $\vu\in V$. \hfill (Multiplicative identity)
-		\end{itemize} 
-
-		\noindent Basically, we can think of vector spaces as Abelian groups with additional structures involving scalar multiplications. According to definition \ref{def:vector_space}, the fact that $V$ is an Abelian group makes it satisfy properties $(i), (iii), (iv), (vii)$ and $(viii)$. The additonal properties regarding scalar multiplication are listed above.
-	\end{definition} 
 \end{example} 
+
+\begin{definition}[Vector Space as Abelian Group]
+	Let $V$ be a vector space over a field $\field$ with two operations $``+"$ and $``\cdot"$. Then, $(V, +)$ is an (additive) Abelian group that satisfies the additional axioms on scalar multiplications:
+	\begin{enumerate}[label=\roman*]
+		\item $\lambda\vu \in V$ for all $\lambda\in\field$ and $\vu\in V$. \hfill (Closure under scalar multiplication)
+		\item $(\lambda\mu)\vu = \lambda(\mu\vu)$ for all $\lambda, \mu\in\field$ and $\vv\in V$. \hfill (Associativity)
+		\item $\lambda(\vu + \vv) = \lambda\vu + \lambda\vv$, $\vu, \vv\in V$ and $\lambda\in\field$. \hfill (Distributivity in $V$)
+		\item $(\lambda + \mu)\vu = \lambda\vu + \mu\vu$, $\lambda, \mu\in\field$ and $\vu\in V$. \hfill (Distributivity in $\field$)
+		\item $1\vu = \vu$ for all $\vu\in V$. \hfill (Multiplicative identity)
+	\end{itemize} 
+
+	\noindent Basically, we can think of vector spaces as Abelian groups with additional structures involving scalar multiplications. According to definition \ref{def:vector_space}, the fact that $V$ is an Abelian group makes it satisfy properties $(i), (iii), (iv), (vii)$ and $(viii)$. The additonal properties regarding scalar multiplication are listed above.
+\end{definition} 
 
 \subsection{Subspace and Spanning Sets}
 In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ that is a subset of $\R^2$, $\mathrm{L}=\{(x, 3x)^\top : x\in\R\}$, which is a line through the origin. In this section, we provide a formal definition for subspace of a vector space:
@@ -136,7 +136,40 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{definition} 
 
 \begin{proposition}{Closure of Subspace under Linear Combination}{closure_of_subspace}
-	
+	For a non-empty subset $S$ of a vector space $V$ over a field $\field$. Under the inherited operations, the following statements are equivalent:
+	\begin{enumerate}
+		\item $S$ is a subspace of $V$.
+		\item $S$ is closed under linear combinations of any number of vectors: For all $\lambda_1, \dots, \lambda_n\in\field$ and $\vu_1, \dots, \vu_n\in S$, $\sum_{i=1}^n\lambda_i\vu_i\in S$.	
+	\end{enumerate} 
 \end{proposition} 
 
+\noindent The above proposition gives us a convenient tool to work with whenever we want to prove that some subset of a vector space is a subspace. Instead of going through all the axioms in definition \ref{def:vector_space}, we can just prove that the subset is closed under finite linear combinations. For example, we have the following proposition:
 
+
+\begin{proposition}{Operations that Preserves Subspaces}{operations_that_preserve_subspaces}
+	Let $V$ be a vector space over a field $\field$ and $U, W \subseteq V$ be subspaces. Then, the following subsets of $V$:
+	\begin{enumerate}
+		\item $U + W = \{\vu + \vw: \vu\in U, \vw \in W\}$\footnote{Later we will learn that the direct sum $U\oplus W$ is also a subspace. Basically $U\oplus W=U+W$ where $U\cap W=\{0\}$.},
+		\item $U \cap W = \{\vv \in V: \vv \in U \text{ and } \vv\in W\}$
+	\end{enumerate} 
+
+	\noindent are all subspaces of $V$.
+\end{proposition} 
+
+\begin{proof*}[Proposition \ref{prop:operations_that_preserve_subspaces}]
+	We know that $U+W$ is definitely a subset of $V$ because of its closure under vector addition. It is also trivial that $U\cap W\subseteq V$. Now we prove that any finite linear combination of each subset belongs to itself.
+	\begin{enumerate}
+		\item $U+W$: Let $\lambda_1, \dots, \lambda_n \in \field$ be a finite sequence of scalars and $\vv_1, \dots, \vv_n\in U+W$. Then, for any $1\le i \le n$, we have $\vv_i = \vu_i + \vw_i$ where $\vu_i\in U$ and $\vw_i \in W$. Therefore, we have:
+		\begin{align*}
+			\sum_{i=1}^n \lambda_i \vv_i &= \sum_{i=1}^n \lambda_i \vu_i + \sum_{i=1}^n \lambda_i \vw_i.
+		\end{align*} 
+
+		\noindent Since we have $\sum_{i=1}^n \lambda_i \vu_i\in U$ and $\sum_{i=1}^n \lambda_i \vw_i \in W$ due to closure under linear combinations of subspaces, we have $\sum_{i=1}^n \lambda_i \vv_i \in U+W$. Therefore, $U+W$ is also closed under linear combinations and hence, a subspace of $V$.
+
+		\item $U\cap W$: Let $\vv_1, \dots, \vv_n \in U\cap W$ and $\lambda_1, \dots, \lambda_n\in\field$. It holds that $\sum_{i=1}^n\lambda_i\vv_i \in U$ because $U$ is a subspace. Since $W$ is also a subspace $\sum_{i=1}^n \lambda_i\vv_i \in W$. Therefore, $\sum_{i=1}^n\lambda_i\vv_i\in U\cap W$. 
+	\end{enumerate} 
+\end{proof*} 
+
+\begin{definition}[Span (Linear Closure)]
+	
+\end{definition} 

@@ -198,3 +198,35 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 
 	\noindent Therefore, $\tilde S$ is a subspace of $V$.
 \end{proof*}	 
+
+\begin{proposition}{Adding Vectors to Span}{add_vec_to_span}
+	Let $V$ be a vector space over a field $\field$ and $S\subseteq V$. Let $\vv\in V$, then
+	\begin{equation}
+		\mathrm{span} (S\cup\{\vv\}) = \mathrm{span} (S) \iff \vv \in \mathrm{span} (S).
+	\end{equation} 
+\end{proposition} 
+
+\begin{proof*}[Proposition \ref{prop:add_vec_to_span}]
+	We immediately have $\mathrm{span} (S\cup\{\vv\}) = \mathrm{span} (S) \implies \vv\in\mathrm{span}(S)$	because if $\vv\notin\mathrm{span}(S)$, then the two sets cannot be equal because $\vv\in\mathrm{span}(S\cup\{\vv\})$.
+
+	\noindent\newline To prove the opposite side, suppose that $\vv\in\mathrm{span}(S)$. Hence, we can write $\vv$ as a linear combination of vectors in $S$:
+	\begin{align*}
+		\vv = \sum_{i=1}^n \lambda_i \vu_i, \quad \lambda_i \in \field, \vu_i \in S.	
+	\end{align*} 
+
+	\noindent We prove that $\mathrm{span} (S\cup\{\vv\}) = \mathrm{span}(S)$ by showing that: 
+	\begin{enumerate}
+		\item $\mathrm{span} (S)\subseteq \mathrm{span} (S\cup\{\vv\})$.
+		\item $\mathrm{span} (S\cup\{\vv\})\subseteq \mathrm{span} (S)$.
+	\end{enumerate} 
+
+	\noindent The first containment is clear. To prove the second point, we prove that for any $\vw \in \mathrm{span}(S\cup\{\vv\})$, $\vw\in\mathrm{span}(S)$. Let $\alpha_1, \dots, \alpha_{m+1} \in \field$ and $\vs_1, \dots, \vs_m \in S$, we can write $\vw$ as follows:
+	\begin{align*}
+		\vw &= \sum_{j=1}^m \alpha_j \vs_j + \alpha_{m+1}\vv \\
+			&= \sum_{j=1}^m \alpha_j \vs_j + \alpha_{m+1}\sum_{i=1}^n \lambda_i \vu_i \\
+			&= \sum_{j=1}^m \alpha_j \vs_j + \sum_{i=1}^n \alpha_{m+1}\lambda_i \vu_i,
+	\end{align*} 
+
+	\noindent which is a linear combination of vectors in $S$. Hence, $\vw\in\mathrm{span}(S)$. Therefore, we conclude that $\mathrm{span}(S\cup\{\vv\}) \subseteq \mathrm{span}(S)$.
+\end{proof*} 
+

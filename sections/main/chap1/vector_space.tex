@@ -230,3 +230,14 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 	\noindent which is a linear combination of vectors in $S$. Hence, $\vw\in\mathrm{span}(S)$. Therefore, we conclude that $\mathrm{span}(S\cup\{\vv\}) \subseteq \mathrm{span}(S)$.
 \end{proof*} 
 
+
+\begin{proposition}{Removing Vectors from Span}{remove_vec_from_span}
+	Let $\vv\in S$. Then, removing $\vv$ from $S$ does not shrink the span if and only if it is a linear combination of other vectors in the set.
+	\begin{equation}
+		\mathrm{span}(S\setminus\{\vv\}) = \mathrm{span}(S) \iff \vv \in \mathrm{span}(S\setminus\{\vv\}).	
+	\end{equation} 
+\end{proposition} 
+
+\begin{proof*}[Proposition \ref{prop:remove_vec_from_span}]
+	This is a direct consequence of proposition \ref{prop:add_vec_to_span}.
+\end{proof*} 

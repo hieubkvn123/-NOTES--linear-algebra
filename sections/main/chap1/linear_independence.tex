@@ -1,4 +1,13 @@
 \subsection{Linear Independence}
 \begin{definition}[Linear Independence]
-	In any vector space, a set of vectors is said to be linearly indepedent if \textbf{none of its elements is a linear combination of the others from the set}. Otherwise, the set is linearly dependent.
+	We have the following definitions of linear independence:
+	\begin{enumerate}	
+		\item In any vector space, a finite set of vectors $\vv_1, \dots, \vv_n$ is said to be linearly indepedent if \textup{\textbf{\underline{NONE of its elements} is a linear combination of the others from the set}}. Otherwise, the set is linearly dependent.
+		\item A finite set of vectors $\vv_1, \dots, \vv_n$ is linearly independent if and only if:
+		\begin{align*}
+			\alpha_1\vv_1 + \dots + \alpha_n\vv_n = 0 \implies \alpha_i = 0, \quad \forall 1\le i\le n.	
+		\end{align*} 
+
+		\item An \underline{infinite} set of vectors $V=\{\vv_k\}_{k=1}^\infty$ is linearly indepedent if every finite subset of $V$ is linearly independent.
+	\end{enumerate} 
 \end{definition} 

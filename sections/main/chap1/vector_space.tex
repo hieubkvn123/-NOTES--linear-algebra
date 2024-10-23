@@ -231,6 +231,23 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{proof*} 
 
 
+\begin{corollary}{Adding Indepdent Vector to Span}{add_ind_vec_to_span}
+	Let $V$ be a vector space over a field $\field$ and $S\subseteq V$. Let $\vv\in V$, then
+	\begin{equation}
+		\mathrm{span}(S) \subset \mathrm{span}(S\cup\{\vv\}) \iff \vv\notin \mathrm{span}(S).		
+	\end{equation} 	
+\end{corollary} 
+
+\begin{proof*}[Corollary \ref{coro:add_ind_vec_to_span}]
+	We prove from both sides:
+	\begin{enumerate}
+		\item $\mathrm{span}(S) \subset \mathrm{span}(S\cup\{\vv\}) \implies \vv\notin \mathrm{span}(S)$: Suppose the opposite that $\vv \in \mathrm{span}(S)$. Then, by proposition \ref{prop:add_vec_to_span}, we have $\mathrm{span}(S) = \mathrm{span}(S\cup\{\vv\})$, which contradicts the initial assumption.
+
+		\item $\vv\notin \mathrm{span}(S) \implies \mathrm{span}(S) \subset \mathrm{span}(S\cup\{\vv\})$: Similar to the above, we prove by contradiction using proposition \ref{prop:add_vec_to_span}.
+	\end{enumerate} 
+\end{proof*} 
+
+
 \begin{proposition}{Removing Vectors from Span}{remove_vec_from_span}
 	Let $\vv\in S$. Then, removing $\vv$ from $S$ does not shrink the span if and only if it is a linear combination of other vectors in the set.
 	\begin{equation}
@@ -239,7 +256,7 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{proposition} 
 
 \begin{proof*}[Proposition \ref{prop:remove_vec_from_span}]
-	This is a direct consequence of proposition \ref{prop:add_vec_to_span}. From proposition \ref{prop:remove_vec_from_span}, we have the following corollary.
+	This is a direct consequence of proposition \ref{prop:add_vec_to_span} (By applying the proposition with $\tilde S = S\setminus\{\vv\}$). From proposition \ref{prop:remove_vec_from_span}, we have the following corollary.
 \end{proof*} 
 
 \begin{corollary}{Remove Vector from Linearly Independent Sets}{remove_vec_from_lin_ind_sets}

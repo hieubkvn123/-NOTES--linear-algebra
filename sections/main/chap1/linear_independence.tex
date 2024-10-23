@@ -8,6 +8,31 @@
 			\alpha_1\vv_1 + \dots + \alpha_n\vv_n = 0 \implies \alpha_i = 0, \quad \forall 1\le i\le n.	
 		\end{align*} 
 
+		\item A finite set of vectors $S=\{\vv_1, \dots, \vv_n\}$ is linearly independent if and only if:
+		\begin{align*}
+			\forall 1 \le k \le n: \vv_k \notin \mathrm{span}(S\setminus\{\vv_k\}),
+		\end{align*} 
+
+		\noindent In other words, every vector in $S$ is not spanned by the remaining vectors of $S$.
+	
 		\item An \underline{infinite} set of vectors $V=\{\vv_k\}_{k=1}^\infty$ is linearly indepedent if every finite subset of $V$ is linearly independent.
 	\end{enumerate} 
 \end{definition} 
+
+\begin{definition}[Properties of Linear Independence]
+	From propositions \ref{prop:add_vec_to_span}, \ref{prop:remove_vec_from_span} and corollaries \ref{coro:add_ind_vec_to_span}, \ref{coro:remove_vec_from_lin_ind_sets}, we have the following properties that relate linear independence to spanning sets:
+\end{definition} 
+
+\begin{table}[ht!]
+    \begin{center}
+    \begin{tabular}{@{}lll@{}}
+    \toprule
+    & \multicolumn{2}{c}{\textbf{Same as $\mathrm{span}(S)$}}                               \\ \cmidrule(l){2-3} 
+    & \multicolumn{1}{c}{\textbf{True}}        & \multicolumn{1}{c}{\textbf{False}}          \\ \midrule
+    \textbf{$\mathrm{span}(S\cup\{\vv\})$}      & $\vv\in\mathrm{span}(S)$                 & $\vv\notin\mathrm{span}(S)$                 \\
+    \textbf{$\mathrm{span}(S\setminus\{\vv\})$} & $\vv\in\mathrm{span}(S\setminus\{\vv\})$ & $\vv\notin\mathrm{span}(S\setminus\{\vv\})$ \\ \bottomrule
+    \end{tabular}
+    \caption{Conditions for $\mathrm{span}(S\cup\{\vv\}) = \mathrm{span}(S)$ and $\mathrm{span}(S\setminus\{\vv\}) = \mathrm{span}(S)$.}
+    \end{center}
+\end{table}
+

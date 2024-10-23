@@ -239,5 +239,16 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{proposition} 
 
 \begin{proof*}[Proposition \ref{prop:remove_vec_from_span}]
-	This is a direct consequence of proposition \ref{prop:add_vec_to_span}.
+	This is a direct consequence of proposition \ref{prop:add_vec_to_span}. From proposition \ref{prop:remove_vec_from_span}, we have the following corollary.
+\end{proof*} 
+
+\begin{corollary}{Remove Vector from Linearly Independent Sets}{remove_vec_from_lin_ind_sets}
+	A set $S$ is linearly independent if and only if removing any vector from $S$ shrinks the span. In other words:
+	\begin{equation}
+		\forall\vv\in S: \mathrm{span}(S\setminus\{\vv\}) \subset \mathrm{span}(S).		
+	\end{equation} 	
+\end{corollary} 
+
+\begin{proof*}[Corollary \ref{coro:remove_vec_from_lin_ind_sets}]
+	We prove by contradiction. Suppose that we have $\vv\in S$ and $\mathrm{span}(S\setminus\{\vv\}) = \mathrm{span}(S)$. Then, by proposition \ref{prop:remove_vec_from_span}, we have $\vv\in\mathrm{span}(S\setminus\{\vv\})$. Hence, $\vv$ is a linear combination of the other vectors in $S$, which is a contradiction since we assumed $S$ to be independent.
 \end{proof*} 

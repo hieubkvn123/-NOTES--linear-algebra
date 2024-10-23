@@ -35,3 +35,17 @@
     \end{center}
 \end{table}
 
+\begin{definition}[Properties of Linear Independence]
+	Let $V$ be a vector space (over a field $\field$) and $S\subseteq V$ be a finite subset of $V$. Then, we have:
+	\begin{enumerate}
+		\item $S$ is linearly dependent if and only if there are distinct $\vv_0, \dots, \vv_n\in S$ and $\lambda_1, \dots, \lambda_n\in S$ (not all zeros) such that $\vv_0 = \sum_{i=1}^n\lambda_i\vv_i$.
+		\item Let $S_1 \subseteq S \subseteq S_2$, then:
+		\begin{itemize}
+			\item $S$ is linearly independent $\implies$ $S_2$ is linearly independent.
+			\item $S$ is linearly dependent $\implies$ $S_1$ is linearly dependent.	
+		\end{itemize} 
+
+		\item There always exists $\tilde S \subseteq S$ such that $\tilde S$ is linearly independent and $\mathrm{span}(S) = \mathrm{span}(\tilde S)$.
+	\end{enumerate} 
+\end{definition} 
+

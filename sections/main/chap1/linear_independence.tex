@@ -19,20 +19,19 @@
 	\end{enumerate} 
 \end{definition} 
 
-\begin{definition}[Properties of Linear Independence]
+\begin{definition}[Relation between Linear Independence and Span]
 	From propositions \ref{prop:add_vec_to_span}, \ref{prop:remove_vec_from_span} and corollaries \ref{coro:add_ind_vec_to_span}, \ref{coro:remove_vec_from_lin_ind_sets}, we have the following properties that relate linear independence to spanning sets:
 \end{definition} 
 
 \begin{table}[ht!]
     \begin{center}
-    \begin{tabular}{@{}lll@{}}
-    \toprule
-    & \multicolumn{2}{c}{\textbf{Same as $\mathrm{span}(S)$}}                               \\ \cmidrule(l){2-3} 
-    & \multicolumn{1}{c}{\textbf{True}}        & \multicolumn{1}{c}{\textbf{False}}          \\ \midrule
-    \textbf{$\mathrm{span}(S\cup\{\vv\})$}      & $\vv\in\mathrm{span}(S)$                 & $\vv\notin\mathrm{span}(S)$                 \\
-    \textbf{$\mathrm{span}(S\setminus\{\vv\})$} & $\vv\in\mathrm{span}(S\setminus\{\vv\})$ & $\vv\notin\mathrm{span}(S\setminus\{\vv\})$ \\ \bottomrule
-    \end{tabular}
-    \caption{Conditions for $\mathrm{span}(S\cup\{\vv\}) = \mathrm{span}(S)$ and $\mathrm{span}(S\setminus\{\vv\}) = \mathrm{span}(S)$.}
+    \begin{tabular}{@{}lcc@{}}
+	\toprule
+	                               & \multicolumn{1}{c}{\textbf{$\mathrm{span}(S)=\mathrm{span}(\tilde S)$}} & \multicolumn{1}{c}{\textbf{$\mathrm{span}(S)\ne\mathrm{span}(\tilde S)$}} \\ \midrule
+	\textbf{Add $\vv$ to $S$}      & $\vv\in\mathrm{span}(S)$                                                & $\vv\notin\mathrm{span}(S)$                                               \\
+	\textbf{Remove $\vv$ from $S$} & $\vv\in\mathrm{span}(\tilde S)$                                         & $\vv\notin\mathrm{span}(\tilde S)$                                        \\ \bottomrule
+	\end{tabular}
+    \caption{Conditions for $\mathrm{span}(\tilde S) = \mathrm{span}(S)$ where $\tilde S$ is resulted from adding $\vv$ to or removing $\vv$ from $S$. Note that for a vector $\vu$ and a (finite) set $V$, when we write $\vu\notin\mathrm{span}(V)$, it is the same as saying ``$\vu$ is independent of all vectors in $V$''.}
     \end{center}
 \end{table}
 

@@ -6,28 +6,43 @@ OUTPUT_DIR="output"
 # Create directories if they do not exist
 mkdir -p "$OUTPUT_DIR"
 
-# Compile with pdflatex
-echo "INFO - Compiling PDF document from source."
-pdflatex -quiet -output-directory="$OUTPUT_DIR" -aux-directory="$OUTPUT_DIR" main.tex
+# Define compilation function
+function tex-pdf {
+    printf "INFO - Step 1/4 (pdflatex) - First compilation \n"
+    pdflatex -output-directory=$OUTPUT_DIR -halt-on-error -interaction=nonstopmode $1 > $OUTPUT_DIR/$1.txt
+    grep '^!.*' --color=never $OUTPUT_DIR/$1.txt
 
-# Run Biber
-# Note: Biber will look for the .aux file in the output directory
-biber "$OUTPUT_DIR/main"
+    printf "INFO - Step 2/4 (bibtex) - Compile references \n"
+    biber $OUTPUT_DIR/$1 > $OUTPUT_DIR/$1.txt
+    grep '^!.*' --color=never $OUTPUT_DIR/$1.txt
 
-# Recompile with pdflatex twice to ensure references are updated
-echo "INFO - Recompiling PDF document from source."
-pdflatex -quiet -output-directory="$OUTPUT_DIR" -aux-directory="$OUTPUT_DIR" main.tex
-pdflatex -quiet -output-directory="$OUTPUT_DIR" -aux-directory="$OUTPUT_DIR" main.tex
+    printf "INFO - Step 3/4 (pdflatex) - Second compilation \n"
+    pdflatex -halt-on-error -interaction=nonstopmode -output-directory="$OUTPUT_DIR" $1 > $OUTPUT_DIR/$1.txt
+    grep '^!.*' --color=never $OUTPUT_DIR/$1.txt
 
-# Open the output file with a PDF viewer
-# Adjust the command below based on the PDF viewer installed on your system
-sumatrapdf "$OUTPUT_DIR/main.pdf" &
+    printf "INFO - Step 4/4 (pdflatex) - Final compilation \n"
+    pdflatex -halt-on-error -interaction=nonstopmode -output-directory="$OUTPUT_DIR" $1 > $OUTPUT_DIR/$1.txt
+    grep '^!.*' --color=never $OUTPUT_DIR/$1.txt
 
-# Notify completion
-echo "INFO - Compilation completed. Output in '$OUTPUT_DIR' directory."
+    rm -f $OUTPUT_DIR/$1.txt $OUTPUT_DIR/$1.aux $OUTPUT_DIR/$1.bbl $OUTPUT_DIR/$1.blg $OUTPUT_DIR/$1.log $OUTPUT_DIR/$1.out
+    rm -f $OUTPUT_DIR/$1.bcf $OUTPUT_DIR/$1.loe $OUTPUT_DIR/$1.run.xml $OUTPUT_DIR/$1.aux.bbl $OUTPUT_DIR/$1.aux.blg
+}
+export -f tex-pdf
+
+# Compile
+tex-pdf main
+
+# Open Okular
+pgrep -x okular > /dev/null || okular $OUTPUT_DIR/main.pdf &
 
 # Pause and wait for user input
-read -p "Press [Enter] to clear the terminal and exit..."
+echo "INFO - Compilation completed. Output in '$OUTPUT_DIR' directory."
+read -n 1 -p "INFO - Press [Enter] to re-compile or any key to quit: " key
 
 # Clear the terminal screen
 clear
+if [[ $key == "" ]]; then
+	bash compile.sh
+else
+	echo "INFO - Finished compiling..."
+fi

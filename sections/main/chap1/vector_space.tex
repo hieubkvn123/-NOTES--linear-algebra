@@ -1,7 +1,7 @@
 \subsection{Definition of Vector Space}
 \begin{definition}[Vector Space]
 	\label{def:vector_space}
-	A \textbf{vector space} (over a field $\field$) consists of a set $V$ with two operations $``+"$ and $``\cdot"$ subject to the conditions that for all $\vec{v}, \vec{w}, \vec{u}\in V$ and scalars $r, s\in\field$:
+	A \textbf{vector space} (over a field $\mathbb{F}$) consists of a set $V$ with two operations $``+"$ and $``\cdot"$ subject to the conditions that for all $\vec{v}, \vec{w}, \vec{u}\in V$ and scalars $r, s\in\mathbb{F}$:
 	\begin{enumerate}
 		\item \textbf{Closure under}:
 		\begin{enumerate}[label=\roman*]
@@ -30,7 +30,7 @@
 		\item \textbf{Identity elements}:
 		\begin{enumerate}[label=\roman*]\addtocounter{enumii}{8}
 			\item Additive identity: $\exists\vec{0} \in V: \vec{0} + \vec{v} = \vec{v}, \quad \forall \vec{v}\in V$.
-			\item Multiplicative identity: $\exists \bm{1}\in\field: \bm{1}\cdot\vec{v} = \vec{v},\quad \forall \vec{v} \in V$.	
+			\item Multiplicative identity: $\exists \boldsymbol{1}\in\mathbb{F}: \boldsymbol{1}\cdot\vec{v} = \vec{v},\quad \forall \vec{v} \in V$.	
 		\end{enumerate} 
 	\end{enumerate} 
 
@@ -38,7 +38,7 @@
 \end{definition} 
 
 \begin{remark}[``Over a field'']
-	When we use the phrase ``a vector space over a field $\field$'', this means that the scalars that we use will be taken from the field $\field$. It does not mean that our vector space consists of $\field$-valued vectors. For example, the following vector space:
+	When we use the phrase ``a vector space over a field $\mathbb{F}$'', this means that the scalars that we use will be taken from the field $\mathbb{F}$. It does not mean that our vector space consists of $\mathbb{F}$-valued vectors. For example, the following vector space:
 	\begin{align*}
 		\mathrm{L} = \bigCurl{(x, \alpha x) : x\in\mathbb{C}, \alpha\in\R}	
 	\end{align*}
@@ -113,14 +113,14 @@
 \end{example} 
 
 \begin{definition}[Vector Space as Abelian Group]
-	Let $V$ be a vector space over a field $\field$ with two operations $``+"$ and $``\cdot"$. Then, $(V, +)$ is an (additive) Abelian group that satisfies the additional axioms on scalar multiplications:
+	Let $V$ be a vector space over a field $\mathbb{F}$ with two operations $``+"$ and $``\cdot"$. Then, $(V, +)$ is an (additive) Abelian group that satisfies the additional axioms on scalar multiplications:
 	\begin{enumerate}[label=\roman*]
-		\item $\lambda\vu \in V$ for all $\lambda\in\field$ and $\vu\in V$. \hfill (Closure under scalar multiplication)
-		\item $(\lambda\mu)\vu = \lambda(\mu\vu)$ for all $\lambda, \mu\in\field$ and $\vv\in V$. \hfill (Associativity)
-		\item $\lambda(\vu + \vv) = \lambda\vu + \lambda\vv$, $\vu, \vv\in V$ and $\lambda\in\field$. \hfill (Distributivity in $V$)
-		\item $(\lambda + \mu)\vu = \lambda\vu + \mu\vu$, $\lambda, \mu\in\field$ and $\vu\in V$. \hfill (Distributivity in $\field$)
+		\item  $\lambda \vu \in V$ for all $\lambda\in\mathbb{F}$ and $\vu\in V$. \hfill (Closure under scalar multiplication).
+		\item $(\lambda\mu)\vu = \lambda(\mu\vu)$ for all $\lambda, \mu\in\mathbb{F}$ and $\vv\in V$. \hfill (Associativity)
+		\item $\lambda(\vu + \vv) = \lambda\vu + \lambda\vv$, $\vu, \vv\in V$ and $\lambda\in\mathbb{F}$. \hfill (Distributivity in $V$)
+		\item $(\lambda + \mu)\vu = \lambda\vu + \mu\vu$, $\lambda, \mu\in\mathbb{F}$ and $\vu\in V$. \hfill (Distributivity in $\mathbb{F}$)
 		\item $1\vu = \vu$ for all $\vu\in V$. \hfill (Multiplicative identity)
-	\end{itemize} 
+	\end{enumerate} 
 
 	\noindent Basically, we can think of vector spaces as Abelian groups with additional structures involving scalar multiplications. According to definition \ref{def:vector_space}, the fact that $V$ is an Abelian group makes it satisfy properties $(i), (iii), (iv), (vii)$ and $(viii)$. The additonal properties regarding scalar multiplication are listed above.
 \end{definition} 
@@ -136,10 +136,10 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{definition} 
 
 \begin{proposition}{Closure of Subspace under Linear Combination}{closure_of_subspace}
-	For a non-empty subset $S$ of a vector space $V$ over a field $\field$. Under the inherited operations, the following statements are equivalent:
+	For a non-empty subset $S$ of a vector space $V$ over a field $\mathbb{F}$. Under the inherited operations, the following statements are equivalent:
 	\begin{enumerate}
 		\item $S$ is a subspace of $V$.
-		\item $S$ is closed under linear combinations of any number of vectors: For all $\lambda_1, \dots, \lambda_n\in\field$ and $\vu_1, \dots, \vu_n\in S$, $\sum_{i=1}^n\lambda_i\vu_i\in S$.	
+		\item $S$ is closed under linear combinations of any number of vectors: For all $\lambda_1, \dots, \lambda_n\in\mathbb{F}$ and $\vu_1, \dots, \vu_n\in S$, $\sum_{i=1}^n\lambda_i\vu_i\in S$.	
 	\end{enumerate} 
 \end{proposition} 
 
@@ -147,7 +147,7 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 
 
 \begin{proposition}{Operations that Preserves Subspaces}{operations_that_preserve_subspaces}
-	Let $V$ be a vector space over a field $\field$ and $U, W \subseteq V$ be subspaces. Then, the following subsets of $V$:
+	Let $V$ be a vector space over a field $\mathbb{F}$ and $U, W \subseteq V$ be subspaces. Then, the following subsets of $V$:
 	\begin{enumerate}
 		\item $U + W = \{\vu + \vw: \vu\in U, \vw \in W\}$\footnote{Later we will learn that the direct sum $U\oplus W$ is also a subspace. Basically $U\oplus W=U+W$ where $U\cap W=\{0\}$.},
 		\item $U \cap W = \{\vv \in V: \vv \in U \text{ and } \vv\in W\}$
@@ -159,22 +159,22 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \begin{proof*}[Proposition \ref{prop:operations_that_preserve_subspaces}]
 	We know that $U+W$ is definitely a subset of $V$ because of its closure under vector addition. It is also trivial that $U\cap W\subseteq V$. Now we prove that any finite linear combination of each subset belongs to itself.
 	\begin{enumerate}
-		\item $U+W$: Let $\lambda_1, \dots, \lambda_n \in \field$ be a finite sequence of scalars and $\vv_1, \dots, \vv_n\in U+W$. Then, for any $1\le i \le n$, we have $\vv_i = \vu_i + \vw_i$ where $\vu_i\in U$ and $\vw_i \in W$. Therefore, we have:
+		\item $U+W$: Let $\lambda_1, \dots, \lambda_n \in \mathbb{F}$ be a finite sequence of scalars and $\vv_1, \dots, \vv_n\in U+W$. Then, for any $1\le i \le n$, we have $\vv_i = \vu_i + \vw_i$ where $\vu_i\in U$ and $\vw_i \in W$. Therefore, we have:
 		\begin{align*}
 			\sum_{i=1}^n \lambda_i \vv_i &= \sum_{i=1}^n \lambda_i \vu_i + \sum_{i=1}^n \lambda_i \vw_i.
 		\end{align*} 
 
 		\noindent Since we have $\sum_{i=1}^n \lambda_i \vu_i\in U$ and $\sum_{i=1}^n \lambda_i \vw_i \in W$ due to closure under linear combinations of subspaces, we have $\sum_{i=1}^n \lambda_i \vv_i \in U+W$. Therefore, $U+W$ is also closed under linear combinations and hence, a subspace of $V$.
 
-		\item $U\cap W$: Let $\vv_1, \dots, \vv_n \in U\cap W$ and $\lambda_1, \dots, \lambda_n\in\field$. It holds that $\sum_{i=1}^n\lambda_i\vv_i \in U$ because $U$ is a subspace. Since $W$ is also a subspace $\sum_{i=1}^n \lambda_i\vv_i \in W$. Therefore, $\sum_{i=1}^n\lambda_i\vv_i\in U\cap W$. 
+		\item $U\cap W$: Let $\vv_1, \dots, \vv_n \in U\cap W$ and $\lambda_1, \dots, \lambda_n\in\mathbb{F}$. It holds that $\sum_{i=1}^n\lambda_i\vv_i \in U$ because $U$ is a subspace. Since $W$ is also a subspace $\sum_{i=1}^n \lambda_i\vv_i \in W$. Therefore, $\sum_{i=1}^n\lambda_i\vv_i\in U\cap W$. 
 	\end{enumerate} 
 \end{proof*} 
 
 \begin{definition}[Span (Linear Closure)]
-	The span of a non empty subset $S$ of a vector space over a field $\field$ is the set of all linear combinations of vectors from $S$.
+	The span of a non empty subset $S$ of a vector space over a field $\mathbb{F}$ is the set of all linear combinations of vectors from $S$.
 	\begin{equation}
 		\mathrm{span}(S) = \biggCurl{
-			\sum_{i=1}^n \lambda_i \vv_i : \vv_i \in S, \lambda_i \in \field
+			\sum_{i=1}^n \lambda_i \vv_i : \vv_i \in S, \lambda_i \in\mathbb{F} 
 		}.
 	\end{equation} 
 
@@ -186,9 +186,9 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{proposition} 
 
 \begin{proof*}[Proposition \ref{prop:span_of_subsets_in_vspaces}]
-	Let $V$ be a vector space over $\field$ and $S\subseteq V$. Denote that $\tilde S = \mathrm{span}(S)$. Obviously $\tilde S \subseteq V$ due to closure under linear combinations of vector spaces. We have to prove that $\tilde S$ is also closed under linear combinations. Let $\lambda_1, \dots, \lambda_n\in\field$ and $\vv_1, \dots, \vv_n\in \tilde S$. For each $\vv_i$, we have:
+	Let $V$ be a vector space over $\mathbb{F}$ and $S\subseteq V$. Denote that $\tilde S = \mathrm{span}(S)$. Obviously $\tilde S \subseteq V$ due to closure under linear combinations of vector spaces. We have to prove that $\tilde S$ is also closed under linear combinations. Let $\lambda_1, \dots, \lambda_n\in\mathbb{F}$ and $\vv_1, \dots, \vv_n\in \tilde S$. For each $\vv_i$, we have:
 	\begin{align*}
-		\vv_i = \sum_{j=1}^{n_i} \alpha_{i, j} \vu_{i,j} \text{ where } \alpha_{i,1}, \dots, \alpha_{i, n_i} \in \field, \vu_{i,1}, \dots, \vu_{i,n_i} \in S.
+		\vv_i = \sum_{j=1}^{n_i} \alpha_{i, j} \vu_{i,j} \text{ where } \alpha_{i,1}, \dots, \alpha_{i, n_i} \in \mathbb{F}, \vu_{i,1}, \dots, \vu_{i,n_i} \in S.
 	\end{align*} 
 
 	\noindent Therefore, we have:
@@ -200,7 +200,7 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 \end{proof*}	 
 
 \begin{proposition}{Adding Vectors to Span}{add_vec_to_span}
-	Let $V$ be a vector space over a field $\field$ and $S\subseteq V$. Let $\vv\in V$, then
+	Let $V$ be a vector space over a field $\mathbb{F}$ and $S\subseteq V$. Let $\vv\in V$, then
 	\begin{equation}
 		\mathrm{span} (S\cup\{\vv\}) = \mathrm{span} (S) \iff \vv \in \mathrm{span} (S).
 	\end{equation} 
@@ -211,7 +211,7 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 
 	\noindent\newline To prove the opposite side, suppose that $\vv\in\mathrm{span}(S)$. Hence, we can write $\vv$ as a linear combination of vectors in $S$:
 	\begin{align*}
-		\vv = \sum_{i=1}^n \lambda_i \vu_i, \quad \lambda_i \in \field, \vu_i \in S.	
+		\vv = \sum_{i=1}^n \lambda_i \vu_i, \quad \lambda_i \in \mathbb{F}, \vu_i \in S.	
 	\end{align*} 
 
 	\noindent We prove that $\mathrm{span} (S\cup\{\vv\}) = \mathrm{span}(S)$ by showing that: 
@@ -220,7 +220,7 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 		\item $\mathrm{span} (S\cup\{\vv\})\subseteq \mathrm{span} (S)$.
 	\end{enumerate} 
 
-	\noindent The first containment is clear. To prove the second point, we prove that for any $\vw \in \mathrm{span}(S\cup\{\vv\})$, $\vw\in\mathrm{span}(S)$. Let $\alpha_1, \dots, \alpha_{m+1} \in \field$ and $\vs_1, \dots, \vs_m \in S$, we can write $\vw$ as follows:
+	\noindent The first containment is clear. To prove the second point, we prove that for any $\vw \in \mathrm{span}(S\cup\{\vv\})$, $\vw\in\mathrm{span}(S)$. Let $\alpha_1, \dots, \alpha_{m+1} \in \mathbb{F}$ and $\vs_1, \dots, \vs_m \in S$, we can write $\vw$ as follows:
 	\begin{align*}
 		\vw &= \sum_{j=1}^m \alpha_j \vs_j + \alpha_{m+1}\vv \\
 			&= \sum_{j=1}^m \alpha_j \vs_j + \alpha_{m+1}\sum_{i=1}^n \lambda_i \vu_i \\
@@ -232,7 +232,7 @@ In example \ref{example:simple_vector_space}, we saw a vector space over $\R$ th
 
 
 \begin{corollary}{Adding Indepdent Vector to Span}{add_ind_vec_to_span}
-	Let $V$ be a vector space over a field $\field$ and $S\subseteq V$. Let $\vv\in V$, then
+	Let $V$ be a vector space over a field $\mathbb{F}$ and $S\subseteq V$. Let $\vv\in V$, then
 	\begin{equation}
 		\mathrm{span}(S) \subset \mathrm{span}(S\cup\{\vv\}) \iff \vv\notin \mathrm{span}(S).		
 	\end{equation} 	

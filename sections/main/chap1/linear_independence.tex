@@ -41,11 +41,19 @@
 		\item $S$ is linearly dependent if and only if there are distinct $\vv_0, \dots, \vv_n\in S$ and $\lambda_1, \dots, \lambda_n\in S$ (not all zeros) such that $\vv_0 = \sum_{i=1}^n\lambda_i\vv_i$.
 		\item Let $S_1 \subseteq S \subseteq S_2$, then:
 		\begin{itemize}
-			\item $S$ is linearly independent $\implies$ $S_2$ is linearly independent.
-			\item $S$ is linearly dependent $\implies$ $S_1$ is linearly dependent.	
+			\item $S$ is linearly independent $\implies$ $S_1$ is linearly independent.
+			\item $S$ is linearly dependent $\implies$ $S_2$ is linearly dependent.	
 		\end{itemize} 
 
 		\item There always exists $\tilde S \subseteq S$ such that $\tilde S$ is linearly independent and $\mathrm{span}(S) = \mathrm{span}(\tilde S)$.
 	\end{enumerate} 
 \end{definition} 
+
+\begin{example}[Finding the Minimum Spanning Set]
+	Suppose that we have a set of vectors $S=\{\vv_1, \vv_2, \vv_3 \}$ where each $\vv_i\in\R^3$. Then, we can find the subset $S_1\subseteq S$ by:
+	\begin{enumerate}[label=(\roman*)]
+		\item Write $S$ as a matrix $A$ where the $i^{th}$ column is $\vv_i$.
+		\item Write $A$ in reduced row echelon form: $A\to A_\mathrm{rref}$.
+	\end{enumerate} 
+\end{example} 
 
